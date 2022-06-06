@@ -6,7 +6,7 @@ class contaBanco {
     private String donoConta;
     private int saldoConta;
     private boolean statusConta;
-    // contrutor
+    //! contrutor
     public contaBanco(String tipoC, String nameD, int saldoC){
         this.numConta = digitosConta();
         this.tipoConta = tipoC;
@@ -20,9 +20,9 @@ class contaBanco {
         return num;
     }
    
-    //acessores
+    //!acessores
  
-    
+    //!metodos
     //funçoes padrão de banco: abrir e fechar conta
     public void abrirConta(){
         if(this.statusConta == true){
@@ -47,4 +47,13 @@ class contaBanco {
             System.out.println("conta não pode se deletada, pois tem um debito: " + this.saldoConta + "R$");
         }
     }
+    
+    //funções padrão de deposito e saque
+    public void depositoConta(int valor){
+        this.saldoConta += valor;
+    }
+    public void saqueConta(int valor){
+        this.saldoConta -= valor;
+    }
+
 }
