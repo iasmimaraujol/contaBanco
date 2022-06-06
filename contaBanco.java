@@ -14,10 +14,37 @@ class contaBanco {
         this.saldoConta = saldoC;
         this.statusConta = true;
     }
+    //função para criar n. conta de forma randomica 
     public int digitosConta(){
         int num = (int)(1000*Math.random());
         return num;
     }
-
+   
+    //acessores
+ 
     
+    //funçoes padrão de banco: abrir e fechar conta
+    public void abrirConta(){
+        if(this.statusConta == true){
+            System.out.println("Usuario " + this.donoConta + " já possui uma conta neste banco!");
+        }else{
+            System.out.println("Usuario pode abrir conta neste banco");
+        }
+    }
+    public void fecharConta(){
+        if(this.saldoConta == 0){
+            System.out.println("conta sendo deletada ...");
+            this.statusConta = false;
+            this.donoConta = "";
+            this.numConta = 0;
+            this.tipoConta = "";
+            System.out.println("Conta deletada com sucesso");
+        }
+        if(this.saldoConta > 0){
+            System.out.println("conta não pode se deletada, pois tem: " + this.saldoConta + "R$");
+        }
+        if(this.saldoConta == 0){
+            System.out.println("conta não pode se deletada, pois tem um debito: " + this.saldoConta + "R$");
+        }
+    }
 }
